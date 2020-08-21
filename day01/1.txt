@@ -1,0 +1,42 @@
+day02 --> 你在这
+|
+day03 --> homework.txt(目标)
+
+相对路径:
+../day03/homework.txt
+
+绝对路径:
+/home/tarena/month01/day03/homework.txt
+
+练习1:
+
+       |--- mysql
+    etc|--- python
+/---|
+    lib|--- sys
+       |--- local --- file(目标)
+            (位置)
+
+绝对路径 :  /lib/local/file
+相对路径 :  ../../lib/local/file
+
+绝对路径 :  /lib/local/file
+相对路径 :  file
+
+练习2 : cd 进入到  /--usr---local
+       然后通过相对路径方法进入 /---etc
+
+cd /usr/local
+cd ../../etc
+
+作业 : 1. 熟练使用今天的命令
+      2. tar 将第一阶段代码 压缩打包为 bz2格式
+         备份存储
+
+
+
+
+
+
+
+

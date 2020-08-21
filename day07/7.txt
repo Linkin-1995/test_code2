@@ -1,0 +1,67 @@
+前情回顾
+
+1. 改
+   update [tb] set col=val,.. where..
+
+   删
+   delete from [tb] where ...
+
+   alter
+
+   alter table [tb] add/drop/modify/change/rename
+
+2. 时间数据类型
+
+   date   datetime  time  year  timestamp
+
+   now()  curtime() curdate()
+
+3. 高级查询方法
+
+   模糊查询 : like   %  _
+   正则查询 : regexp
+   起名字 : as
+   排序: order by [col] desc
+   限制: limit [num]
+   联合查询 : union  all
+   子查询: (select..)
+          from 后面 将查询内容作为一个 查询表
+          where 子句 查询结果作为一值
+
+4. 聚合操作
+
+   * 聚合函数:  avg()  sum() max() min()  count()
+
+   * 聚合分组: group by col1,col2
+
+练习1: 使用book 表完成
+1. 统计每位作家图书的平均价格
+2. 统计每个出版社出版图书的数量
+3. 查看总共有多少个出版社
+4. 筛选出那些出版过超过50元的图书的出版社,并按照其
+出版图书的平局价格降序排序
+5. 统计相同时间出版图书的最高价格和最低价格
+
+
+
+思考: 微信用户信息  用户发朋圈的信息  评论点赞信息
+
+
+练习: 根据之前设计的朋友圈表格进行修改
+完成数据表的设计和关系的设计
+
+作业:
+1. 熟练几天的语句和关系的创建方法
+2. 拆分book表
+
+   存图书信息   存作者信息   存出版社信息
+
+   表字段内容自己拟定
+   关系自己拟定
+   创建出你所设计的数据表
+
+
+
+
+
+

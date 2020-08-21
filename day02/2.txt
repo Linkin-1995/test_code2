@@ -1,0 +1,32 @@
+前情回顾
+
+1. 什么是操作系统  OS
+
+   Linux  Unix  win
+
+2. Linux
+
+   特点 :  开源  网络功能强大  跨平台  多用户
+
+   构成 :  内核  文件系统  命令解释器(bash shell)  应用
+
+   使用 :  服务器系统   嵌入式设备   桌面系统
+
+3. 文件系统
+
+   结构 : 树形结构   /
+   文件位置表达 : 绝对路径  相对路径
+
+4. Linux 命令 (shell命令)
+
+   man
+
+   ls    cd   mv  cp   cat   touch  rm
+   mkdir  grep  tar  zip  sudo
+
+
+
+
+
+
+

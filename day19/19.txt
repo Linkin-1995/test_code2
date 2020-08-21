@@ -1,0 +1,216 @@
+前情回顾
+
+1. 扩展 : 高并发的衡量指标
+
+2. 项目开发流程
+
+   需求分析文档
+   概要设计文档
+   详细设计文档
+   测试文档
+   说明文档
+   甘特图
+   流程图
+
+3.  git
+
+    git概述 : 开源  分布
+
+    git 基本命令  : add/mv/rm commit status log
+
+    版本管理 :  reset   reflog   tag
+
+    工作区 :  stash
+
+    分支管理: branch  checkout  merge  冲突
+
+4. github
+
+   github 仓库 -->  http   ssh
+
+   git clone xxxxxxxx
+
+   git remote add origin  xxxxxxx
+
+在线词典
+
+1. 需求分析
+
+   确定要实现的功能
+
+2. 技术分析
+
+   *  使用什么样的并发模型 :  多进程tcp网络并发
+
+   *  两个界面相互怎么跳转  (demo演示)
+
+
+   *  存储 :  dict数据库 --> words单词表
+
+     还需要存储什么:
+
+     单词  解释  用户  密码  用户  单词  时间
+
+     怎么创建表
+        words : id  单词  解释
+
+        user  : id  用户名  密码
+        create table user (
+        id int primary key auto_increment,
+        name varchar(30) not null,
+        passwd char(20) not null);
+
+        hist  : id  单词  时间 user_id
+        create table history (
+        id int primary key auto_increment,
+        word varchar(30),
+        time datetime default now(),
+        user_id int,
+        foreign key (user_id) references user(id));
+
+        hist : 用户  单词  时间
+        hist : 用户_id  单词_id  时间
+
+
+
+3. 功能模块设计和封装设计 (MVC)
+
+   * 几个功能,怎么划分
+
+     注册
+     登录
+     查单词
+     历史记录
+
+   * 用什么封装
+
+     客户端 : 收集用户请求,发送请求,等待数据,展示结果
+
+     服务端 : 接收请求, 逻辑处理, 发送结果
+
+                      调用数据,
+
+     M--> 数据处理
+     V--> 视图
+     C--> 控制
+
+
+4. 通信协议
+              请求类型     请求内容
+   注册          R       name  passwd
+   登录          L       name  passwd
+   查单词        Q        word
+   历史记录      H
+   退出          E
+
+
+5. 模块划分
+
+   网络并发结构搭建
+   注册
+      客户端 : 输入用户名密码
+              发送请求
+              等待结果 分情况讨论
+              yes--> 注册成功
+              no --> 注册失败
+
+      服务端 : 接收请求
+              判断是否可以注册
+              给客户端反馈 OK  FAIL
+              yes -> 将用户信息存入数据库
+              no ->
+
+   登录
+   查单词
+
+       客户端:  输入单词
+               发送请求
+               等待结果
+               直接打印
+
+       服务端 : 接受请求
+               查询单词
+               组织结果发送给客户端
+               插入历史记录
+
+   历史记录
+
+
+
+总结 :
+
+Linux 总结
+
+1. Linux 操作系统的构成
+2. Linux 操作系统的特点和使用场景  (知道)
+3. Linux 操作系统文件结构  使用 Ubuntu
+4. 常用Linux命令  (多练习)
+
+    文件文件夹操作
+    压缩解压
+    用户创建
+    远程访问
+    软件安装
+
+5. 使用vi修改文件
+
+数据管理小结
+
+文件
+  *  文件的读写方法
+  *  二进制文件和文本文件处理差异
+  *  通过基本的正则提取文件中的目标
+
+数据库
+  *  基本的增删改查语句
+  *  创建数据库和数据表
+  *  数据表设计能力 (字段,约束,表关系)
+  *  查询数据的能力 (聚合查询,索引建设,高级查询,关联查询)
+  *  使用pymysql对数据库进行基础操作
+
+  *  数据库最后两天内容 面试前看视频
+
+网络并发编程 (核心编程)
+
+1. 网络编程
+   * 网络基础支持
+       tcp/ip  osi  三次握手四次挥手  tcp对比udp
+       ip  端口  网络传输大体流程
+
+   * tcp套接字编程
+   * udp套接字编程
+
+2. 进程线程
+
+   * 什么是进程
+      进程概念  进程状态  孤儿僵尸定义
+      进程线程的对比    并发并行  如何使用cpu
+
+   * 能够使用Python创建进程 mutiprocessing
+      自定义进程类   进程池   进程执行现象理解
+
+   * 能够使用Python创建线程 threading
+      同步互斥,基本的同步互斥方法
+      python的GIL问题
+
+3. IO问题和HTTP
+
+   * IO模型分类 : 阻塞  非阻塞  IO多路复用
+   * IO密集和计算密集,各自的特点
+   * HTTP协议的格式
+
+4. 网络并发模型
+   * 多任务并发
+   * IO多路复用并发模型
+
+5. 综合案例
+   * 聊天室
+   * ftp文件服务
+   * webserver
+   * 在线词典
+
+
+
+
+
+
